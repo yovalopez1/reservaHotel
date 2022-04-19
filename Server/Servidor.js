@@ -13,8 +13,8 @@ export class Servidor{
     }
 
     encenderServidor(){
-        this.app.get('/', function (req, res) {
-            res.send('Hello World')
+        this.app.listen(process.env.PORT, function(){
+            console.log(`Servidor encendido en ${process.env.PORT}`)
         })
     }
 
@@ -23,7 +23,7 @@ export class Servidor{
     }
 
     conectarconBd(){
-        
+
     }
 
 
