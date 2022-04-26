@@ -4,11 +4,14 @@ import express from 'express'
 //importar rutas del api
 import { rutas } from '../routes/rutas.js'
 
+import {conectar} from '../database/conexion.js'
+
 export class Servidor{
 
     constructor(){
         //atributo app donde almaceno la funcionalidad de express
         this.app = express()
+        this.conectarconBd()
         this.llamarAuxiliar()
         this.atenderServicios()
     }
@@ -24,7 +27,7 @@ export class Servidor{
     }
 
     conectarconBd(){
-
+        conectar()
     }
 
     llamarAuxiliar(){
