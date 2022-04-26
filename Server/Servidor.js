@@ -9,6 +9,7 @@ export class Servidor{
     constructor(){
         //atributo app donde almaceno la funcionalidad de express
         this.app = express()
+        this.llamarAuxiliar()
         this.atenderServicios()
     }
 
@@ -24,6 +25,11 @@ export class Servidor{
 
     conectarconBd(){
 
+    }
+
+    llamarAuxiliar(){
+        //activo la recepcion de datos por el body de la peticion
+        this.app.use(express.json())
     }
 
 
